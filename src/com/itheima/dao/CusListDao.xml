@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.CusListDao">
+
+	<resultMap type="com.itheima.po.Customer" id="resultMap">
+		<id property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="age" column="age"/>
+		<result property="student_num" column="student_num"/>
+		<result property="phone_number" column="phone_number"/>
+		<result property="sex" column="sex"/>
+		<result property="year" column="year"/>
+		<result property="college_id" column="college_id"/>
+		<result property="major_id" column="major_id"/>
+		<result property="class_id" column="class_id"/>
+	</resultMap>
+	
+	<select id="findAll" resultMap="resultMap">
+		select * from student 
+	</select>
+	
+</mapper>

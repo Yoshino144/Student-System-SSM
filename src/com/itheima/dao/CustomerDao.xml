@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.CustomerDao">
+
+	<select id="findCustomerByStudent" parameterType="Integer"
+		                               resultType="Customer">
+		select * from student where student_num = #{student_num}
+	</select>
+
+	<insert id="add" parameterType="Customer">
+		INSERT INTO student(student_num,name,phone_number,sex,year,college_id,major_id,class_id)VALUES(#{student_num},#{name},#{phone_number},#{sex},#{year},#{college_id},#{major_id},#{class_id})
+	</insert>
+
+	<update id="change" parameterType="Customer">
+		UPDATE  student SET name=#{name},phone_number=#{phone_number},sex=#{sex},year=#{year},college_id=#{college_id},major_id=#{major_id},class_id=#{class_id}
+		WHERE student_num=#{student_num}
+	</update>
+
+	<delete id="delete" parameterType="Integer" >
+
+		delete from student where student_num = #{student_num}
+	</delete>
+
+	
+</mapper>
